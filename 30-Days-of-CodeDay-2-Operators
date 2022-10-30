@@ -1,0 +1,11 @@
+
+
+        double tip = meal_cost * tip_percent / 100;
+        double tax = meal_cost * tax_percent / 100;
+        
+        double totalCost = meal_cost + tip + tax;
+        
+        Console.WriteLine(Math.Round(totalCost));
+
+
+www.patika.dev
