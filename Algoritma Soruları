@@ -1,0 +1,105 @@
+using System;
+
+namespace algoritma_sorulari_odev_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Soru 1
+            Console.WriteLine("Please enter a positive 'n' value to specify how many numbers you are going to enter later");
+            int n=int.Parse(Console.ReadLine());
+            Console.WriteLine("Please enter "+n+" positive values.");
+            int[] arr = new int[n];
+
+            for (int i=0;i<n;i++)
+            {
+                arr[i]=int.Parse(Console.ReadLine());
+            }
+            projectEven(arr);
+
+            // Soru 2
+            Console.WriteLine("Please enter two positive 'n and m' values to specify how many numbers you are going to enter later and to check if these number can be divided to m");
+            int n2=int.Parse(Console.ReadLine());
+            int m2=int.Parse(Console.ReadLine());
+            Console.WriteLine("Please enter "+n2+" positive values.");
+            int[] arr2 = new int[n2];
+            for (int i=0;i<n2;i++)
+            {
+                arr2[i]=int.Parse(Console.ReadLine());
+            }
+            dividedExactly(arr2,m2);
+
+            // Soru 3
+            Console.WriteLine("Please enter a positive 'n ' values to specify how many word you are going to enter later");
+            int n3=int.Parse(Console.ReadLine());
+            Console.WriteLine("Please enter "+n3+" words.");
+            string[] str = new string[n3];
+            for (int i=0;i<n3;i++)
+            {
+                str[i]=Console.ReadLine();
+            }
+            reverseOrder(str);
+            
+            // Soru 4
+            Console.WriteLine("Please enter a sentence");
+            string str2=Console.ReadLine();
+            sentenceBreaker(str2);
+            
+        }
+
+        // Soru 1 algoritma
+        public static void projectEven(int[] even)
+        {
+            int inc=0;
+            int m=even.Length;
+            int[] result = new int[m];
+            for (int i=0;i<even.Length;i++)
+            {
+                if (even[i]%2==0)
+                {
+                    result[inc]=even[i];
+                    Console.Write(result[inc]+" ");
+                    inc++;
+                }
+            }
+        }
+        // Soru 2 algoritma
+        public static void dividedExactly(int[] div,int divider)
+        {
+            int inc=0;
+            int m=div.Length;
+            int[] result = new int[m];
+            for (int i=0;i<div.Length;i++)
+            {
+                if (div[i]%divider==0)
+                {
+                    result[inc]=div[i];
+                    Console.Write(result[inc]+" ");
+                    inc++;
+                }
+            
+            }
+        }
+
+        // Soru 3 algoritma
+        public static void reverseOrder(string[] str)
+        {
+            Array.Reverse(str);
+            foreach(var item in str)
+                Console.Write(item+" ");
+        }
+
+        // Soru 4 algoritma
+        public static void sentenceBreaker(string str)
+        {
+            string[] strr=str.Split(" ");
+            int y = strr.Length;
+            str= new string(str.Replace(" ",""));
+            char[] charArray=str.ToCharArray();
+            int x=charArray.Length;
+            Console.WriteLine("letter count is: "+x);
+            Console.WriteLine("word count is: "+y);
+        }
+    }
+}
